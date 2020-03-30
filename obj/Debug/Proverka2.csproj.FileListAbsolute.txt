@@ -1,0 +1,10 @@
+E:\Эээээксперементы\Proverka2\bin\Debug\Proverka2.exe.config
+E:\Эээээксперементы\Proverka2\bin\Debug\Proverka2.exe
+E:\Эээээксперементы\Proverka2\bin\Debug\Proverka2.pdb
+E:\Эээээксперементы\Proverka2\obj\Debug\Proverka2.csprojAssemblyReference.cache
+E:\Эээээксперементы\Proverka2\obj\Debug\Proverka2.Form1.resources
+E:\Эээээксперементы\Proverka2\obj\Debug\Proverka2.Properties.Resources.resources
+E:\Эээээксперементы\Proverka2\obj\Debug\Proverka2.csproj.GenerateResource.cache
+E:\Эээээксперементы\Proverka2\obj\Debug\Proverka2.exe
+E:\Эээээксперементы\Proverka2\obj\Debug\Proverka2.pdb
+E:\Эээээксперементы\Proverka2\obj\Debug\Proverka2.csproj.CoreCompileInputs.cache
