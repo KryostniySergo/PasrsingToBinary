@@ -34,6 +34,7 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
+            this.checkBox1 = new System.Windows.Forms.CheckBox();
             this.SuspendLayout();
             // 
             // button1
@@ -41,7 +42,7 @@
             this.button1.BackColor = System.Drawing.SystemColors.MenuHighlight;
             this.button1.Font = new System.Drawing.Font("Russo One", 8.249999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.button1.ForeColor = System.Drawing.SystemColors.Control;
-            this.button1.Location = new System.Drawing.Point(12, 71);
+            this.button1.Location = new System.Drawing.Point(12, 87);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(272, 47);
             this.button1.TabIndex = 0;
@@ -98,11 +99,22 @@
             this.label1.TabIndex = 6;
             this.label1.Text = "MadeBy: KryostniySergo";
             // 
+            // checkBox1
+            // 
+            this.checkBox1.AutoSize = true;
+            this.checkBox1.Location = new System.Drawing.Point(53, 60);
+            this.checkBox1.Name = "checkBox1";
+            this.checkBox1.Size = new System.Drawing.Size(204, 17);
+            this.checkBox1.TabIndex = 7;
+            this.checkBox1.Text = "Переводить и выводить в пробелы";
+            this.checkBox1.UseVisualStyleBackColor = true;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(296, 269);
+            this.Controls.Add(this.checkBox1);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
@@ -124,6 +136,7 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.CheckBox checkBox1;
     }
 }
 
