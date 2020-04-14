@@ -20,6 +20,17 @@ namespace Proverka2
 
         private void button1_Click(object sender, EventArgs e)
         {
+            if (checkBox1.Checked.Equals(true))
+            {
+                S_probelami();
+            }
+            else
+            {
+                Obich();
+            }
+
+            void Obich()
+            {
                 var t = textBox1.Text;
 
                 byte[] symbols = Encoding.GetEncoding(1251).GetBytes(t);
@@ -28,52 +39,61 @@ namespace Proverka2
                 saveFile.DefaultExt = ".txt";
                 saveFile.Filter = "(*.txt)|*.txt";
 
-                var arr = new List<string>();
-                if (checkBox1.Checked.Equals(true))
-                {
-                    for (int i = 0; i < t.Length; i++)
-                    {
-                        string biba = Convert.ToString(symbols[i], 2);
-                        char[] suka = biba.ToCharArray();
-                        Console.WriteLine(biba);
-                        string hel = "";
-                        for (int s = 0; s < suka.Length; s++)
-                        {
-                            if (suka[s] == '1')
-                            {
-                                hel += " ";
-                            }
-                            if (suka[s] == '0')
-                            {
-                                hel += "\t";
-                            }
-                        }
-                        arr.Add(hel);
-                    }
-                }
-
                 if (saveFile.ShowDialog() == System.Windows.Forms.DialogResult.OK && saveFile.FileName.Length > 0)
                 {
                     StreamWriter stream = new StreamWriter(saveFile.FileName, true);
-                    if (checkBox1.Checked.Equals(true))
+                    for (int i = 0; i < t.Length; i++)
                     {
-                        for (int i = 0; i < arr.Count; i++)
-                        {
-                            stream.WriteLine(arr[i]);
-                        }
+                        stream.WriteLine(t[i] + ": " + " (10): " + symbols[i] + " (2): " + Convert.ToString(symbols[i], 2));
                     }
-                    else
-                    {
-                        for (int i = 0; i < t.Length; i++)
-                        {
-                            stream.WriteLine(t[i] + ": " + " (10): " + symbols[i] + " (2): " + Convert.ToString(symbols[i], 2));
-                        }
-
-                        stream.WriteLine("Если ты ввел числа то просто добавь в начало два нуля (Было 110010 -- Стало 00110010)");
-                        stream.Close();
-                    }
+                    stream.WriteLine("Если ты ввел числа то просто добавь в начало два нуля (Было 110010 -- Стало 00110010)");
+                    stream.Close();
                 }
                 Close();
+            }
+
+            void S_probelami()
+            {
+                var t = textBox1.Text;
+
+                byte[] symbols = Encoding.GetEncoding(1251).GetBytes(t);
+
+                SaveFileDialog saveFile = new SaveFileDialog();
+                saveFile.DefaultExt = ".txt";
+                saveFile.Filter = "Perevod|*.txt";
+
+                var arr = new List<string>();
+                for (int i = 0; i < t.Length; i++)
+                {
+                    string biba = Convert.ToString(symbols[i], 2);
+                    char[] suka = biba.ToCharArray();
+                    Console.WriteLine(biba);
+                    string hel = "";
+                    for (int s = 0; s < suka.Length; s++)
+                    {
+                        if (suka[s] == '1')
+                        {
+                            hel += " ";
+                        }
+                        if (suka[s] == '0')
+                        {
+                            hel += "\t";
+                        }
+                    }
+                    arr.Add(hel);
+                }
+                if (saveFile.ShowDialog() == System.Windows.Forms.DialogResult.OK && saveFile.FileName.Length > 0)
+                {
+                    StreamWriter stream = new StreamWriter(saveFile.FileName, true);
+                    for (int i = 0; i < arr.Count; i++)
+                    {
+                        stream.WriteLine(arr[i]);
+                    }
+                    stream.Close();
+                }
+                Close();
+            }
+
         }
 
         private void button2_Click(object sender, EventArgs e)
