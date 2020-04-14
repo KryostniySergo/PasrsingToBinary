@@ -68,9 +68,10 @@ namespace Proverka2
                         {
                             stream.WriteLine(t[i] + ": " + " (10): " + symbols[i] + " (2): " + Convert.ToString(symbols[i], 2));
                         }
+
+                        stream.WriteLine("Если ты ввел числа то просто добавь в начало два нуля (Было 110010 -- Стало 00110010)");
+                        stream.Close();
                     }
-                    stream.WriteLine("Если ты ввел числа то просто добавь в начало два нуля (Было 110010 -- Стало 00110010)");
-                    stream.Close();
                 }
                 Close();
         }
